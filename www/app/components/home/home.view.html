@@ -1,0 +1,35 @@
+<ion-view view-title="Blank Template">
+	<ion-content class="padding">
+
+		<div class="clearfix">
+		<div ng-repeat="cat in ['Button Downs', 'TShirts', 'Pants']">
+			<div class="item item-divider">
+				{{cat}}
+			</div>
+			<div class="category-wrap">
+				<ul class="card-wrap clearfix">
+					<li class="card list" ng-repeat="n in [0,1,2,3,4,5]">
+						<div class="item item-text-wrap">
+							<div style="position: relative;" class="item-icon-circle-right padding-bottom">
+								<div class="icon icon-circle" style="background-color: #606dbc;"></div>
+								<h2>
+									<strong style="font-weight: 500">Ted Baker</strong> 
+									<small style="font-size: 85%">Button Down</small>
+								</h2>
+								<p>Flower Pattern</p>
+								<p>$2.15 a wear</p>
+							</div>
+
+							<div class="button-bar padding-top">
+								<button class="button button-outline button-dark icon ion-information-circled"></button>
+								<button class="button button-outline button-dark icon ion-tshirt"></button>
+							</div>
+						</div>	
+					</li>	
+				</ul>
+			</div>
+		</div>
+
+		<button class="button button-balanced icon ion-plus" style="float: right;"></button>
+	</ion-content>
+</ion-view>
