@@ -5,16 +5,76 @@
 		.module('clothingTracker')
 		.controller('HomeController', HomeController);
 	
-	HomeController.$inject = ['persistenceFactory'];
+	HomeController.$inject = ['$q', '$ngData'];
 
-	function HomeController () {
-		// console.log(persistenceFactory);
+	function HomeController ($q, $ngData) {
+		var vm,
+			Category,
+			ClothingItem;
 
-		// var category = new persistenceFactory.Category({title: 'Pants'});
+		vm = this;
+		Category = $ngData.model('Category');
+		ClothingItem = $ngData.model('Clothing Item');
 
-		// persistenceFactory.add(category).then(function (data) {
-		// 	console.log(data);
-		// });
+		activate();
+
+		return;
+
+		function activate () {
+			var promises = [Category.find(), ClothingItem.find()];
+
+			$q.all(promises).then(function (values) {
+				vm.categories = values[0];
+            	vm.clothingItems = values[1];
+
+            	nestData();
+			});
+		}
+
+		function nestData () {
+			// Set up hash so we can efficiently know the index and set up empty array
+			// to store clothing items in
+			var hash = {};
+			var i = 0;
+			vm.categories.forEach(function (category) {
+				category.clothingItems = [];
+				hash[category.id] = i;
+				i++;
+			});
+
+			vm.clothingItems.forEach(function (clothingItem) {
+				vm.categories[hash[clothingItem.category_id]].clothingItems.push(clothingItem);
+			});
+			console.log(vm.categories);
+		}
+
+
+
+		return;
+		var Category = $ngData.model('Category');
+		var ClothingItem = $ngData.model('Clothing Item');
+		var cats = ['Pants', 'Button Downs', 'T-Shirts', 'Sweaters']
+
+		for (var cat in cats) {
+			Category.create({
+				title: cats[cat],
+				date_created: new Date().toString()
+			}).then(function (category) {
+				console.log(category);
+			}).catch(function (error) {
+				console.log(error);
+				for (var i = 0; i < 4; i++) {
+					ClothingItem.create({
+						brand: 'Ted Baker',
+						note: 'Flower Pattern',
+						cost: 20.30,
+						date_created: new Date().toString(),
+						category_id: Math.floor(Math.random() * 4) + 1
+					});
+				}
+			});
+		}
+
 	}
 	
 })();

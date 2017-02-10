@@ -3,7 +3,8 @@
 
 	angular
 		.module('clothingTracker', ['ionic', 'ngData'])
-		.run(ionicRun);
+		.run(ionicRun)
+		.run(ngDataRun);
 	
 	ionicRun.$inject = ['$ionicPlatform'];
 
@@ -23,5 +24,49 @@
 				StatusBar.styleDefault();
 			}
 		});
+	}
+
+	ngDataRun.$inject = ['$ngData'];
+
+	function ngDataRun ($ngData) {
+        $ngData.model('Clothing Item', {
+            tableName: 'clothing_items',
+            properties: {
+            	brand: {
+            		type: String,
+            		required: true
+            	},
+				note: {
+            		type: String,
+            		required: true
+            	},
+				cost: Number,
+				date_created: {
+            		type: Date,
+            		required: true
+            	},
+				category_id: {
+					type: Number,
+					required: true
+				}
+            }
+        });
+
+        $ngData.model('Category', {
+            tableName: 'categories',
+            properties: {
+            	title: {
+            		type: String,
+            		required: true,
+            		unique: true
+            	},
+				date_created: {
+            		type: Date,
+            		required: true
+            	}
+            }
+        });
+
+        $ngData.initialize();
 	}
 })();

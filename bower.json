@@ -6,5 +6,8 @@
   },
   "dependencies": {
     "ngData": "^0.2.0"
+  },
+  "resolutions": {
+    "angular": "1.5.3"
   }
 }

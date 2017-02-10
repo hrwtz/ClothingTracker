@@ -2,21 +2,21 @@
 	<ion-content class="padding">
 
 		<div class="clearfix">
-		<div ng-repeat="cat in ['Button Downs', 'TShirts', 'Pants']">
+		<div ng-repeat="category in vm.categories">
 			<div class="item item-divider">
-				{{cat}}
+				{{category.title}}
 			</div>
 			<div class="category-wrap">
 				<ul class="card-wrap clearfix">
-					<li class="card list" ng-repeat="n in [0,1,2,3,4,5]">
+					<li class="card list" ng-repeat="clothingItem in category.clothingItems">
 						<div class="item item-text-wrap">
 							<div style="position: relative;" class="item-icon-circle-right padding-bottom">
 								<div class="icon icon-circle" style="background-color: #606dbc;"></div>
 								<h2>
-									<strong style="font-weight: 500">Ted Baker</strong> 
-									<small style="font-size: 85%">Button Down</small>
+									<strong style="font-weight: 500">{{clothingItem.brand}}</strong> 
+									<small style="font-size: 85%">{{category.title}}</small>
 								</h2>
-								<p>Flower Pattern</p>
+								<p>{{clothingItem.note}}</p>
 								<p>$2.15 a wear</p>
 							</div>
 
