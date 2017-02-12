@@ -40,6 +40,10 @@
             		type: String,
             		required: true
             	},
+            	color: {
+            		type: String,
+            		required: true
+            	},
 				cost: Number,
 				date_created: {
             		type: Date,
@@ -60,12 +64,22 @@
             		required: true,
             		unique: true
             	},
+            	singular_title: {
+            		type: String,
+            		required: true,
+            		unique: true
+            	},
 				date_created: {
             		type: Date,
             		required: true
             	}
             }
         });
+
+   //      wear_log
+			// id
+			// clothing_id
+			// date_created
 
         $ngData.initialize();
 	}

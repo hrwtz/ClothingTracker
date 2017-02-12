@@ -58,6 +58,7 @@
 		for (var cat in cats) {
 			Category.create({
 				title: cats[cat],
+				singular_title: cats[cat].substring(0, cats[cat].length - 1),
 				date_created: new Date().toString()
 			}).then(function (category) {
 				console.log(category);
@@ -68,6 +69,7 @@
 						brand: 'Ted Baker',
 						note: 'Flower Pattern',
 						cost: 20.30,
+						color: '#606dbc',
 						date_created: new Date().toString(),
 						category_id: Math.floor(Math.random() * 4) + 1
 					});

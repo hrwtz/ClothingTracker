@@ -21,6 +21,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import "base";
 
 .item-icon-circle-right {
 	padding-right: 61px;	
@@ -54,28 +55,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	}
 }
 
-.padding .card {
-	float: left;
-	max-width: 250px;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 5px;
-	margin-bottom: 15px;
-}
-
-.card-wrap {
-	width: 9999px;
-	margin-left: -10px;
-	margin-right: -10px;
-}
-
-
-.clearfix:after {
-    display: block;
-    content: "";
-    clear: both;
-}
-
 .category-wrap {
 	overflow: auto;
 	margin-top: 15px;
@@ -83,4 +62,30 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 .list:last-child.card {
 	margin-bottom: 0;
+}
+
+
+
+
+.clothingCard {
+	float: left;
+	width: 100%;
+	max-width: 250px;
+
+	.clothingCard-wrap & {
+		margin: 5px 10px 15px;
+	}
+}
+
+.clothingCard-wrap {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.clothingCard-subTitle {
+	font-weight: 500
+}
+
+.clothingCard-catTitle{
+	font-size: 85%
 }
