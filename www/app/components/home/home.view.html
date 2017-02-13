@@ -6,15 +6,15 @@
 			<div class="item item-divider">
 				{{category.title}}
 			</div>
-			<div class="category-wrap">
-				<ul class="clearfix clothingCard-wrap" width-of-children>
-					<li class="card list clothingCard" ng-repeat="clothingItem in category.clothingItems">
+			<div class="clothingCard-categoryWrap">
+				<ul class="clearfix clothingCard-wrap">
+					<li class="card list clothingCard" ng-repeat="clothingItem in category.clothing_items">
 						<div class="item item-text-wrap">
 							<div class="item-icon-circle-right padding-bottom por">
-								<div class="icon icon-circle" ng-style="{'background-color': clothingItem.color}"></div>
+								<div class="icon iconCircle" ng-style="{'background-color': clothingItem.color}"></div>
 								<h2 class="clothingCard-title">
 									<strong class="clothingCard-subTitle">{{clothingItem.brand}}</strong> 
-									<small class="clothingCard-catTitle" style="font-size: 85%">{{category.singular_title}}</small>
+									<small class="clothingCard-catTitle">{{category.singular_title}}</small>
 								</h2>
 								<p>{{clothingItem.note}}</p>
 								<p>$2.15 a wear</p>
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	
-		<div class="button-bar padding-bottom" style="float: right; width: 150px;">
+		<div class="button-bar padding-bottom button-bar--small fr">
 			<button class="button button-outline button-dark icon ion-pricetags"></button>
 			<button class="button button-outline button-balanced icon ion-plus-circled"></button>
 		</div>

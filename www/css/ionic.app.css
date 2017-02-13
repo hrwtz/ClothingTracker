@@ -1,20 +1,4 @@
 @charset "UTF-8";
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
-
-For example, you might change some of the default colors:
-
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9815,6 +9799,12 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
 .por {
   position: relative; }
 
@@ -9823,10 +9813,37 @@ a.button {
   content: "";
   clear: both; }
 
-.item-icon-circle-right {
-  padding-right: 61px; }
+.button-bar--small {
+  width: 150px; }
 
-.item .icon-circle {
+.clothingCard {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 250px; }
+  .clothingCard-wrap .clothingCard {
+    margin: 5px 10px 15px; }
+    .clothingCard-wrap .clothingCard:first-of-type {
+      margin-left: 15px; }
+    .clothingCard-wrap .clothingCard:last-of-type {
+      margin-bottom: 15px; }
+
+.clothingCard-categoryWrap {
+  overflow: auto;
+  margin-top: 15px;
+  margin-bottom: 20px; }
+
+.clothingCard-wrap {
+  display: flex;
+  margin-left: -10px;
+  margin-right: -10px; }
+
+.clothingCard-subTitle {
+  font-weight: 500; }
+
+.clothingCard-catTitle {
+  font-size: 85%; }
+
+.iconCircle {
   position: absolute;
   top: 50%;
   right: 0;
@@ -9836,7 +9853,7 @@ a.button {
   margin-top: -25px;
   border-radius: 50%;
   overflow: hidden; }
-  .item .icon-circle:after {
+  .iconCircle:after {
     position: absolute;
     top: 0;
     right: 0;
@@ -9844,28 +9861,3 @@ a.button {
     left: 0;
     background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 4px, rgba(255, 255, 255, 0) 4px, rgba(255, 255, 255, 0) 8px);
     content: ''; }
-
-.category-wrap {
-  overflow: auto;
-  margin-top: 15px;
-  margin-bottom: 20px; }
-
-.list:last-child.card {
-  margin-bottom: 0; }
-
-.clothingCard {
-  float: left;
-  width: 100%;
-  max-width: 250px; }
-  .clothingCard-wrap .clothingCard {
-    margin: 5px 10px 15px; }
-
-.clothingCard-wrap {
-  margin-left: -10px;
-  margin-right: -10px; }
-
-.clothingCard-subTitle {
-  font-weight: 500; }
-
-.clothingCard-catTitle {
-  font-size: 85%; }

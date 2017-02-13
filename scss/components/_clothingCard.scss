@@ -1,0 +1,48 @@
+// *************************************
+//
+//   Clothing Card
+//   -> Individual card containing a piece of clothing's information
+//
+// *************************************
+
+.clothingCard {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 250px;
+
+	.clothingCard-wrap & {
+		margin: 5px 10px 15px;
+
+		&:first-of-type {
+			margin-left: 15px;
+		}
+
+		&:last-of-type {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.clothingCard-categoryWrap {
+	overflow: auto;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.clothingCard-wrap {
+	display: flex;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.clothingCard-subTitle {
+	font-weight: 500
+}
+
+.clothingCard-catTitle{
+	font-size: 85%
+}
