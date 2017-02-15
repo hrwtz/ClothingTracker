@@ -1,6 +1,5 @@
-<ion-view view-title="Blank Template">
+<ion-view hide-nav-bar="true">
 	<ion-content class="padding">
-
 		<div class="clearfix">
 		<div ng-repeat="category in vm.categories">
 			<div class="item item-divider">
@@ -31,8 +30,8 @@
 		</div>
 	
 		<div class="button-bar padding-bottom button-bar--small fr">
-			<button class="button button-outline button-dark icon ion-pricetags"></button>
-			<button class="button button-outline button-balanced icon ion-plus-circled"></button>
+			<button class="button button-outline button-dark icon ion-pricetags" ui-sref="categories"></button><!--
+		 --><button class="button button-outline button-balanced icon ion-plus-circled"></button>
 		</div>
 	</ion-content>
 </ion-view>

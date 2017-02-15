@@ -10,10 +10,16 @@
 
 	function stateConfig ($stateProvider, $urlRouterProvider) {
 		$stateProvider
-			.state('tabs', {
+			.state('home', {
 				url: '/',
 				templateUrl: 'app/components/home/home.view.html',
 				controller: 'HomeController',
+				controllerAs: 'vm'
+			})
+			.state('categories', {
+				url: '/categories',
+				templateUrl: 'app/components/categories/categories.view.html',
+				controller: 'CategoriesController',
 				controllerAs: 'vm'
 			});
 		$urlRouterProvider

@@ -15,14 +15,8 @@
 		init();
 
 		function init () {
-			var contain = {
-				Category: {
-					'Clothing Item': true
-				}
-			};
-
-			ngDataFactory.find('Category', {}, {'Clothing Item': true}).then(function (values) {
-				vm.categories = values;
+			ngDataFactory.find('Category', {}, {'Clothing Item': true}).then(function (categories) {
+				vm.categories = categories;
 			});
 		}
 

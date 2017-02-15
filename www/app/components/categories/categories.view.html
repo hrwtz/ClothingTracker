@@ -1,0 +1,21 @@
+<ion-view view-title="Categories">
+	<ion-content class="padding">
+		<ul class="list card">
+			<li class="item item-text-wrap item-icon" ng-repeat="category in vm.categories">
+				<div class="item-icon-wrap">
+					<span class="item-icon-content">
+					    {{category.title}}
+					</span>
+				    <span class="item-icon-icons" style="">
+						<i class="icon ion-edit"></i>
+						<i class="icon ion-close-circled"></i>
+					</span>
+				</div>
+			</li>
+		</ul>
+
+		<div class="button-bar padding-bottom button-bar--small fr">
+			<button class="button button-outline button-balanced icon ion-plus-circled"></button>
+		</div>
+	</ion-content>
+</ion-view>

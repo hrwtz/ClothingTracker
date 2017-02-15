@@ -1,0 +1,52 @@
+// *************************************
+//
+//   Ionic Expansion
+//   -> Overrides and additions to ionic styles
+//
+// *************************************
+
+// -------------------------------------
+//   Button Bar
+// -------------------------------------
+
+.button-bar--small {
+	display: block;
+	width: auto;
+}
+
+.button-bar--small .button{
+	display: inline-block;
+	width: 75px;
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.item-icon .icon {
+	font-size: 32px;
+}
+
+.item-icon-wrap {
+	display: flex;
+}
+
+.item-icon-content {
+	flex-grow: 1;
+	flex-shrink: 1;
+	word-break: break-word;
+}
+
+.item-icon-icons {
+	flex-shrink: 0;
+	height: 20px;
+	padding-left: 15px; 
+	margin-top: -5px;
+	margin-right: -5px;
+	margin-left: -5px;  
+}
+
+.item-icon-icons .icon {
+	margin-left: 5px;  
+	margin-right: 5px;
+}

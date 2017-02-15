@@ -9814,7 +9814,35 @@ a.button {
   clear: both; }
 
 .button-bar--small {
-  width: 150px; }
+  display: block;
+  width: auto; }
+
+.button-bar--small .button {
+  display: inline-block;
+  width: 75px; }
+
+.item-icon .icon {
+  font-size: 32px; }
+
+.item-icon-wrap {
+  display: flex; }
+
+.item-icon-content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  word-break: break-word; }
+
+.item-icon-icons {
+  flex-shrink: 0;
+  height: 20px;
+  padding-left: 15px;
+  margin-top: -5px;
+  margin-right: -5px;
+  margin-left: -5px; }
+
+.item-icon-icons .icon {
+  margin-left: 5px;
+  margin-right: 5px; }
 
 .clothingCard {
   flex-grow: 0;
@@ -9861,3 +9889,6 @@ a.button {
     left: 0;
     background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 4px, rgba(255, 255, 255, 0) 4px, rgba(255, 255, 255, 0) 8px);
     content: ''; }
+
+.item-icon-circle-right {
+  padding-right: 61px; }

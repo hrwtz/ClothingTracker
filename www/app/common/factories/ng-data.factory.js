@@ -146,9 +146,11 @@
 			if (!result) {
 				result = values['Category'];
 			}
-			// contain = contain[Object.keys(contain)[0]];
 
 			result.forEach(function (object) {
+				if (!contain) {
+					return;
+				}
 				var contains = Object.keys(contain);
 				contains.forEach(function (containModel) {
 					object[$ngData.model(containModel).tableName] = _.where(values[containModel], {category_id: object.id})
