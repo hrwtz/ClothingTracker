@@ -10,7 +10,11 @@
 	function ngDataFactory ($ngData, $q) {
 		var factory = {
 			initialize: initialize,
-			find: find
+			find: find,
+			findOne: findOne,
+			create: create,
+			update: update,
+			remove: remove
 		};
 
 		return factory;
@@ -69,6 +73,22 @@
 				});
 				return d.promise;
 			}
+		}
+
+		function findOne (modelName, id) {
+			return $ngData.model(modelName).findOne({id: id});
+		}
+
+		function create (modelName, object) {
+			return $ngData.model(modelName).create(object);
+		}
+
+		function update (object) {
+			return object.save();
+		}
+
+		function remove (object) {
+			return object.remove();
 		}
 
 		function getClothingItemProperties () {

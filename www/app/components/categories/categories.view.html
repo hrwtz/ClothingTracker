@@ -1,4 +1,10 @@
-<ion-view view-title="Categories">
+<ion-view>
+	<ion-header-bar>
+      	<h1 class="title">Categories</h1>
+      	<div class="buttons">
+        	<button class="button button-icon" ui-sref="home">Cancel</button>
+      </div>
+    </ion-header-bar>
 	<ion-content class="padding">
 		<ul class="list card">
 			<li class="item item-text-wrap item-icon" ng-repeat="category in vm.categories">
@@ -6,16 +12,20 @@
 					<span class="item-icon-content">
 					    {{category.title}}
 					</span>
-				    <span class="item-icon-icons" style="">
-						<i class="icon ion-edit"></i>
-						<i class="icon ion-close-circled"></i>
+				    <span class="item-icon-icons">
+						<a ui-sref="category_edit({category_id: category.id})" class="dark dib">
+							<i class="icon ion-edit"></i>
+						</a>
+						<a ng-click="vm.openConfirmDeletePopup(category)" class="dark dib">
+							<i class="icon ion-close-circled"></i>
+						</a>
 					</span>
 				</div>
 			</li>
 		</ul>
 
 		<div class="button-bar padding-bottom button-bar--small fr">
-			<button class="button button-outline button-balanced icon ion-plus-circled"></button>
+			<button class="button button-outline button-balanced icon ion-plus-circled" ui-sref="category_add"></button>
 		</div>
 	</ion-content>
 </ion-view>

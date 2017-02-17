@@ -21,6 +21,18 @@
 				templateUrl: 'app/components/categories/categories.view.html',
 				controller: 'CategoriesController',
 				controllerAs: 'vm'
+			})
+			.state('category_add', {
+				url: '/categories/add',
+				templateUrl: 'app/components/category-form/category-form.view.html',
+				controller: 'CategoryFormController',
+				controllerAs: 'vm'
+			})
+			.state('category_edit', {
+				url: '/categories/:category_id',
+				templateUrl: 'app/components/category-form/category-form.view.html',
+				controller: 'CategoryFormController',
+				controllerAs: 'vm'
 			});
 		$urlRouterProvider
 			.otherwise('/');
