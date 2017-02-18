@@ -5,9 +5,9 @@
 		.module('clothingTracker')
 		.controller('CategoriesController', CategoriesController);
 	
-	CategoriesController.$inject = ['$ionicPopup', 'ngDataFactory'];
+	CategoriesController.$inject = ['$ionicPopup', '$scope', 'ngDataFactory'];
 
-	function CategoriesController ($ionicPopup, ngDataFactory) {
+	function CategoriesController ($ionicPopup, $scope, ngDataFactory) {
 		var vm;
 		vm = this;
 
@@ -16,7 +16,7 @@
 		init();
 
 		function init () {
-			updateCategories();
+			$scope.$on('$ionicView.beforeEnter', getCategories);
 		}
 
 		function openConfirmDeletePopup (category) {
@@ -27,13 +27,12 @@
 
 			confirmPopup.then(function(res) {
 				if(res) {
-					ngDataFactory.remove(category);
-					updateCategories();
+					ngDataFactory.remove(category).then(getCategories);
 				}
 			});
 		}
 
-		function updateCategories () {
+		function getCategories () {
 			ngDataFactory.find('Category').then(function (categories) {
 				vm.categories = categories;
 			});
