@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('clothingTracker', ['ionic', 'ngData'])
+		.module('clothingTracker', ['ionic', 'ngData', 'ngMaterial', 'mdColorPicker'])
 		.run(runBlock);
 	
 	runBlock.$inject = ['ionicFactory', 'ngDataFactory'];

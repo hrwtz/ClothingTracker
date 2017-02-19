@@ -69,3 +69,39 @@
 	margin-left: -28px;
 	margin-top: -28px;
 }
+
+// -------------------------------------
+//   Material Color Picker
+// -------------------------------------
+.md-color-picker-container {
+	height: 350px;
+
+	.md-color-picker-preview .md-color-picker-result {
+		.md-color-picker-tabs {
+			display: none;
+		}
+
+		& > div > input.switch {
+			display: none;
+		}
+	}
+	
+	.md-color-picker-colors {
+		[md-color-picker-spectrum],
+		[md-color-picker-spectrum] canvas {
+			width: 293px;
+		}
+
+		[md-color-picker-alpha] {
+			display: none;
+		}	
+		
+		&.md-color-picker-tabs .md-tab {
+			&:nth-of-type(2),
+			&:nth-of-type(4),
+			&:nth-of-type(5) {
+				display: none;
+			}
+		}
+	}
+}

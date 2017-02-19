@@ -9861,6 +9861,20 @@ a.button {
   margin-left: -28px;
   margin-top: -28px; }
 
+.md-color-picker-container {
+  height: 350px; }
+  .md-color-picker-container .md-color-picker-preview .md-color-picker-result .md-color-picker-tabs {
+    display: none; }
+  .md-color-picker-container .md-color-picker-preview .md-color-picker-result > div > input.switch {
+    display: none; }
+  .md-color-picker-container .md-color-picker-colors [md-color-picker-spectrum],
+  .md-color-picker-container .md-color-picker-colors [md-color-picker-spectrum] canvas {
+    width: 293px; }
+  .md-color-picker-container .md-color-picker-colors [md-color-picker-alpha] {
+    display: none; }
+  .md-color-picker-container .md-color-picker-colors.md-color-picker-tabs .md-tab:nth-of-type(2), .md-color-picker-container .md-color-picker-colors.md-color-picker-tabs .md-tab:nth-of-type(4), .md-color-picker-container .md-color-picker-colors.md-color-picker-tabs .md-tab:nth-of-type(5) {
+    display: none; }
+
 .clothingCard {
   flex-grow: 0;
   flex-shrink: 0;

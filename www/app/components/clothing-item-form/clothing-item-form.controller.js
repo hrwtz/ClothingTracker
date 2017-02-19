@@ -17,7 +17,6 @@
 
 		vm.pageTitle = (isNew ? 'Add' : 'Edit') + '  Clothing Item';
 		vm.submit = submit;
-		vm.color = '#fff';
 
 		init();
 
