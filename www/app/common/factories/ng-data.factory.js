@@ -80,6 +80,7 @@
 		}
 
 		function create (modelName, object) {
+			object.date_created = object.date_created = new Date().toString();
 			return $ngData.model(modelName).create(object);
 		}
 
