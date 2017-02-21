@@ -44,11 +44,11 @@
 	margin-top: -5px;
 	margin-right: -5px;
 	margin-left: -5px;  
-}
 
-.item-icon-icons .icon {
-	margin-left: 5px;  
-	margin-right: 5px;
+	.icon {
+		margin-left: 5px;  
+		margin-right: 5px;
+	}
 }
 
 // -------------------------------------
@@ -58,22 +58,61 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 56px;
+		height: 56px;
+		margin-left: -28px;
+		margin-top: -28px;
+	}
 }
 
-.spinner-full svg {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 56px;
-	height: 56px;
-	margin-left: -28px;
-	margin-top: -28px;
+// -------------------------------------
+//   Select Form
+// -------------------------------------
+.item-select {
+	display: block;
+
+	&:after {
+		display: none;
+	}
+
+	select {
+		position: relative;
+		width: 100%;
+		max-width: initial;
+		direction: initial;
+		padding: 3px 0;
+	}
+}
+
+.item-select-inner {
+	position: relative;
+
+	&:after {
+	    position: absolute;
+	    top: 50%;
+	    right: 16px;
+	    margin-top: -3px;
+	    width: 0;
+	    height: 0;
+	    border-top: 5px solid;
+	    border-right: 5px solid transparent;
+	    border-left: 5px solid transparent;
+	    color: #999;
+	    content: "";
+	    pointer-events: none;
+	}
 }
 
 // -------------------------------------
 //   Material Color Picker
 // -------------------------------------
 .md-color-picker-container {
+	width: auto;
 	height: 350px;
 
 	.md-color-picker-preview .md-color-picker-result {
@@ -87,11 +126,6 @@
 	}
 	
 	.md-color-picker-colors {
-		[md-color-picker-spectrum],
-		[md-color-picker-spectrum] canvas {
-			width: 293px;
-		}
-
 		[md-color-picker-alpha] {
 			display: none;
 		}	
@@ -104,4 +138,13 @@
 			}
 		}
 	}
+}
+md-input-container {
+	display: none;
+}
+
+.md-color-picker-dialog {
+	width: 90%;
+	max-width: 346px;
+	max-height: 90%;
 }

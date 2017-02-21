@@ -21,24 +21,35 @@
 		init();
 
 		function init () {
+			setInitialClothinItem();
+			getAllCategories();
+		}
+
+		function setInitialClothinItem () {
 			if (isNew) {
-				vm.category = {};
+				vm.clothingItem = {};
 			} else {
-				ngDataFactory.findOne('Category', $stateParams.clothing_item_id).then(function (category) {
-					vm.category = category;
+				ngDataFactory.findOne('Clothing Item', $stateParams.clothing_item_id).then(function (clothingItem) {
+					vm.clothingItem = clothingItem;
 				});
 			}
+		}
+
+		function getAllCategories () {
+			ngDataFactory.find('Category').then(function (categories) {
+				vm.categories = categories;
+			});
 		}
 
 		function submit () {
 			var promise;
 			if (isNew) {
-				promise = ngDataFactory.create('Category', vm.category);
+				promise = ngDataFactory.create('Clothing Item', vm.clothingItem);
 			} else {
-				promise = ngDataFactory.update(vm.category);
+				promise = ngDataFactory.update(vm.clothingItem);
 			}
 			promise.then(function (data) {
-				$state.go('categories');
+				$state.go('home');
 			});
 		}
 	}
