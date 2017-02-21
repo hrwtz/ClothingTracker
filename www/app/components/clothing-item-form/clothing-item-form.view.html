@@ -21,16 +21,21 @@
 					<input type="text" ng-model="vm.clothingItem.cost" placeholder="Cost" required ct-format="currency">
 				</label>
 				<div ct-color-picker ng-model="vm.clothingItem.color">
-					<label class="item item-input" style="height: 74px; padding-right: 16px;">
-						<span class="input-label">Color</span>
+					<label class="item item-input item-stacked-label">
+						<div class="por">
+							<span class="input-label">Color</span>
+							<input type="text" ng-model="vm.clothingItem.color" placeholder="Color" required ct-format="colorName" disabled class="item-enabled">
 
-						<div class="iconCircle" ng-style="{'background-color': vm.clothingItem.color}" style="margin-left: auto;"></div>
+							<div class="iconCircle" ng-style="{'background-color': vm.clothingItem.color}"></div>
+						</div>
 					</label>
 				</div>
 				<label class="item item-input item-select">
 					<span class="input-label">Category</span>
 					<div class="item-select-inner">
-						<select ng-options="category.id as category.title for category in vm.categories" ng-model="vm.clothingItem.category_id"></select>
+						<select ng-options="category.id as category.title for category in vm.categories" ng-model="vm.clothingItem.category_id" required ct-placeholder="Category">
+							<option value="">Category</option>
+						</select>
 					</div>
 				</label>
 			</div>

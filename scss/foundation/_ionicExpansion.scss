@@ -71,8 +71,12 @@
 }
 
 // -------------------------------------
-//   Select Form
+//   Forms
 // -------------------------------------
+.item-input {
+	padding-right: 16px;
+}
+
 .item-select {
 	display: block;
 
@@ -86,6 +90,10 @@
 		max-width: initial;
 		direction: initial;
 		padding: 3px 0;
+
+		&.item-placeholder {
+			color: #888;
+		}
 	}
 }
 
@@ -105,6 +113,13 @@
 	    color: #999;
 	    content: "";
 	    pointer-events: none;
+	}
+}
+
+input,
+input[disabled] {
+	&.item-enabled {
+		background-color: #fff;
 	}
 }
 

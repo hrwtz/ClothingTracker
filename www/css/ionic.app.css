@@ -9859,6 +9859,9 @@ a.button {
     margin-left: -28px;
     margin-top: -28px; }
 
+.item-input {
+  padding-right: 16px; }
+
 .item-select {
   display: block; }
   .item-select:after {
@@ -9869,6 +9872,8 @@ a.button {
     max-width: initial;
     direction: initial;
     padding: 3px 0; }
+    .item-select select.item-placeholder {
+      color: #888; }
 
 .item-select-inner {
   position: relative; }
@@ -9885,6 +9890,10 @@ a.button {
     color: #999;
     content: "";
     pointer-events: none; }
+
+input.item-enabled,
+input[disabled].item-enabled {
+  background-color: #fff; }
 
 .md-color-picker-container {
   width: auto;
@@ -9934,10 +9943,13 @@ md-input-container {
   font-size: 85%; }
 
 .iconCircle {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 0;
   display: block;
   width: 50px;
   height: 50px;
+  margin-top: -25px;
   border: 2px solid #444;
   border-radius: 50%;
   overflow: hidden; }
@@ -9949,12 +9961,6 @@ md-input-container {
     left: 0;
     background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 4px, rgba(255, 255, 255, 0) 4px, rgba(255, 255, 255, 0) 8px);
     content: ''; }
-
-.iconCircle--absolute {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  margin-top: -25px; }
 
 .item-icon-circle-right {
   padding-right: 61px; }
