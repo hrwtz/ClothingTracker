@@ -39,6 +39,12 @@
 				templateUrl: 'app/components/clothing-item-form/clothing-item-form.view.html',
 				controller: 'ClothingItemFormController',
 				controllerAs: 'vm'
+			})
+			.state('clothing_item_edit', {
+				url: '/clothing_item/:clothing_item_id',
+				templateUrl: 'app/components/clothing-item-form/clothing-item-form.view.html',
+				controller: 'ClothingItemFormController',
+				controllerAs: 'vm'
 			});
 		$urlRouterProvider
 			.otherwise('/');

@@ -2,7 +2,7 @@
 	<ion-header-bar>
       	<h1 class="title">{{vm.pageTitle}}</h1>
       	<div class="buttons">
-        	<button class="button button-icon" ui-sref="categories">Cancel</button>
+        	<button class="button button-icon" ui-sref="{{vm.backState}}">Cancel</button>
       </div>
     </ion-header-bar>
 	<ion-content class="padding">
@@ -14,7 +14,7 @@
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Note</span>
-					<input type="text" ng-model="vm.clothingItem.note" placeholder="Note" required>
+					<input type="text" ng-model="vm.clothingItem.note" placeholder="Note">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Cost</span>

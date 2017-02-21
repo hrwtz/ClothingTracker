@@ -5,9 +5,9 @@
 		.module('clothingTracker')
 		.controller('ClothingItemFormController', ClothingItemFormController);
 	
-	ClothingItemFormController.$inject = ['$state', '$stateParams','ngDataFactory'];
+	ClothingItemFormController.$inject = ['$scope', '$state', '$stateParams','ngDataFactory'];
 
-	function ClothingItemFormController ($state, $stateParams, ngDataFactory) {
+	function ClothingItemFormController ($scope, $state, $stateParams, ngDataFactory) {
 		var vm,
 			isNew;
 
@@ -17,15 +17,28 @@
 
 		vm.pageTitle = (isNew ? 'Add' : 'Edit') + '  Clothing Item';
 		vm.submit = submit;
+		vm.backState = 'home';
 
 		init();
 
 		function init () {
-			setInitialClothinItem();
 			getAllCategories();
+			$scope.$on('$ionicView.beforeEnter', setInitialClothingItem);
 		}
 
-		function setInitialClothinItem () {
+		function submit () {
+			var promise;
+			if (isNew) {
+				promise = ngDataFactory.create('Clothing Item', vm.clothingItem);
+			} else {
+				promise = ngDataFactory.update(vm.clothingItem);
+			}
+			promise.then(function (data) {
+				$state.go(vm.backState);
+			});
+		}
+
+		function setInitialClothingItem () {
 			if (isNew) {
 				vm.clothingItem = {};
 			} else {
@@ -38,18 +51,6 @@
 		function getAllCategories () {
 			ngDataFactory.find('Category').then(function (categories) {
 				vm.categories = categories;
-			});
-		}
-
-		function submit () {
-			var promise;
-			if (isNew) {
-				promise = ngDataFactory.create('Clothing Item', vm.clothingItem);
-			} else {
-				promise = ngDataFactory.update(vm.clothingItem);
-			}
-			promise.then(function (data) {
-				$state.go('home');
 			});
 		}
 	}

@@ -5,9 +5,9 @@
 		.module('clothingTracker')
 		.controller('CategoryFormController', CategoryFormController);
 	
-	CategoryFormController.$inject = ['$state', '$stateParams','ngDataFactory'];
+	CategoryFormController.$inject = ['$scope', '$state', '$stateParams','ngDataFactory'];
 
-	function CategoryFormController ($state, $stateParams, ngDataFactory) {
+	function CategoryFormController ($scope, $state, $stateParams, ngDataFactory) {
 		var vm,
 			isNew;
 
@@ -17,17 +17,12 @@
 
 		vm.pageTitle = (isNew ? 'Add' : 'Edit') + '  Category';
 		vm.submit = submit;
+		vm.backState = 'categories';
 
 		init();
 
 		function init () {
-			if (isNew) {
-				vm.category = {};
-			} else {
-				ngDataFactory.findOne('Category', $stateParams.category_id).then(function (category) {
-					vm.category = category;
-				});
-			}
+			$scope.$on('$ionicView.beforeEnter', setInitialCategory);
 		}
 
 		function submit () {
@@ -38,8 +33,18 @@
 				promise = ngDataFactory.update(vm.category);
 			}
 			promise.then(function (data) {
-				$state.go('categories');
+				$state.go(vm.backState);
 			});
+		}
+
+		function setInitialCategory () {
+			if (isNew) {
+				vm.category = {};
+			} else {
+				ngDataFactory.findOne('Category', $stateParams.category_id).then(function (category) {
+					vm.category = category;
+				});
+			}
 		}
 	}
 	
