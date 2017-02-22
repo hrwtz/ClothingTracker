@@ -16,12 +16,12 @@
 										<small class="clothingCard-catTitle">{{category.singular_title}}</small>
 									</h2>
 									<p>{{clothingItem.note}}</p>
-									<p>$2.15 a wear</p>
+									<p>{{clothingItem.cost / clothingItem.wear_log.length | currency}} a wear</p>
 								</div>
 
 								<div class="button-bar padding-top">
 									<button class="button button-outline button-dark icon ion-information-circled"></button>
-									<button class="button button-outline button-dark icon ion-tshirt"></button>
+									<button class="button button-outline button-dark icon ion-tshirt" ng-click="vm.addWearLog(clothingItem)" ng-disabled="vm.isLastWearRecent(clothingItem)"></button>
 								</div>
 							</div>	
 						</li>	
@@ -31,7 +31,7 @@
 			</div>
 
 			<div ng-show="!vm.categories.length" class="padding">
-				<h3>There are no categories to display! Why don't you add some?</h3>
+				<h3>There are no categories to display. Why don't you add some?</h3>
 			</div>
 		
 			<div class="button-bar padding-bottom button-bar--small fr">
