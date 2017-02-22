@@ -9953,14 +9953,6 @@ md-input-container {
   border: 2px solid #444;
   border-radius: 50%;
   overflow: hidden; }
-  .iconCircle:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 4px, rgba(255, 255, 255, 0) 4px, rgba(255, 255, 255, 0) 8px);
-    content: ''; }
 
 .item-icon-circle-right {
   padding-right: 61px; }

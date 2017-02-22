@@ -23,7 +23,8 @@
 			$ngData.model('Clothing Item', {
 	            tableName: 'clothing_items',
 	            referenceName: 'clothing_item',
-	            properties: getClothingItemProperties()
+	            properties: getClothingItemProperties(),
+	            associations: ['Wear Log']
 	        });
 
 	        $ngData.model('Category', {
@@ -31,6 +32,12 @@
 	            referenceName: 'category',
 	            properties: getCategoryProperties(),
 	            associations: ['Clothing Item']
+	        });
+
+	        $ngData.model('Wear Log', {
+	            tableName: 'wear_log',
+	            referenceName: 'wear_log',
+	            properties: getWearLogProperties()
 	        });
 
 	        $ngData.initialize();
@@ -175,9 +182,12 @@
 				var contains = Object.keys(contain);
 				contains.forEach(function (containModel) {
 					object[$ngData.model(containModel).tableName] = _.where(values[containModel], {category_id: object.id})
+					object[$ngData.model(containModel).tableName].forEach(function (dataObject) {
+						dataObject.wear_log = _.where(values['Wear Log'], {clothing_item_id: dataObject.id})
+					});
+
 				});
 			});
-
 			return result;
 		}
 
