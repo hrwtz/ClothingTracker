@@ -1,37 +1,37 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('clothingTracker')
-        .directive('ctFormat', ctFormat);
-    
-    ctFormat.$inject = ['$filter'];
+	angular
+		.module('clothingTracker')
+		.directive('ctFormat', ctFormat);
+	
+	ctFormat.$inject = ['$filter'];
 
-    function ctFormat ($filter) {
-        var directive = {
-            require: '?ngModel',
-            link: link
-        };
+	function ctFormat ($filter) {
+		var directive = {
+			require: '?ngModel',
+			link: link
+		};
 
-        return directive;
+		return directive;
 
-        function link (scope, elem, attrs, ngModel) {
-            if (!ngModel) {
-                return;
-            }
+		function link (scope, elem, attrs, ngModel) {
+			if (!ngModel) {
+				return;
+			}
 
-            ngModel.$formatters.unshift(setModelFilterFormatter);
+			ngModel.$formatters.unshift(setModelFilterFormatter);
 
-            elem.bind('blur', updateValueOnBlur);
+			elem.bind('blur', updateValueOnBlur);
 
-            function setModelFilterFormatter (a) {
-                return $filter(attrs.ctFormat)(ngModel.$modelValue);
-            }
+			function setModelFilterFormatter (a) {
+				return $filter(attrs.ctFormat)(ngModel.$modelValue);
+			}
 
-            function updateValueOnBlur (event) {
-                var plainNumber = elem.val().replace(/[^\d|\-+|\.+]/g, '');
-                elem.val(plainNumber ? $filter(attrs.ctFormat)(plainNumber) : '');
-            }
-        }
-    }
+			function updateValueOnBlur (event) {
+				var plainNumber = elem.val().replace(/[^\d|\-+|\.+]/g, '');
+				elem.val(plainNumber ? $filter(attrs.ctFormat)(plainNumber) : '');
+			}
+		}
+	}
 })();

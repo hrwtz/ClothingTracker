@@ -15,7 +15,7 @@
 
 		vm = this;
 
-		vm.pageTitle = (isNew ? 'Add' : 'Edit') + '  Category';
+		vm.pageTitle = (isNew ? 'Add' : 'Edit') + ' Category';
 		vm.submit = submit;
 		vm.backState = 'categories';
 

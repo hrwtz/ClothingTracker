@@ -15,7 +15,7 @@
 
 		vm = this;
 
-		vm.pageTitle = (isNew ? 'Add' : 'Edit') + '  Clothing Item';
+		vm.pageTitle = (isNew ? 'Add' : 'Edit') + ' Clothing Item';
 		vm.submit = submit;
 		vm.backState = 'home';
 

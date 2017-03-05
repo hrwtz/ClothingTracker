@@ -21,26 +21,26 @@
 
 		function initialize () {
 			$ngData.model('Clothing Item', {
-	            tableName: 'clothing_items',
-	            referenceName: 'clothing_item',
-	            properties: getClothingItemProperties(),
-	            associations: ['Wear Log']
-	        });
+				tableName: 'clothing_items',
+				referenceName: 'clothing_item',
+				properties: getClothingItemProperties(),
+				associations: ['Wear Log']
+			});
 
-	        $ngData.model('Category', {
-	            tableName: 'categories',
-	            referenceName: 'category',
-	            properties: getCategoryProperties(),
-	            associations: ['Clothing Item']
-	        });
+			$ngData.model('Category', {
+				tableName: 'categories',
+				referenceName: 'category',
+				properties: getCategoryProperties(),
+				associations: ['Clothing Item']
+			});
 
-	        $ngData.model('Wear Log', {
-	            tableName: 'wear_log',
-	            referenceName: 'wear_log',
-	            properties: getWearLogProperties()
-	        });
+			$ngData.model('Wear Log', {
+				tableName: 'wear_log',
+				referenceName: 'wear_log',
+				properties: getWearLogProperties()
+			});
 
-	        $ngData.initialize();
+			$ngData.initialize();
 		}
 
 		function find (modelName, conditions, contain) {
@@ -100,64 +100,64 @@
 		}
 
 		function getClothingItemProperties () {
-	    	return {
-	        	brand: {
-	        		type: String,
-	        		required: true
-	        	},
+			return {
+				brand: {
+					type: String,
+					required: true
+				},
 				note: {
-	        		type: String,
-	        		required: true
-	        	},
-	        	color: {
-	        		type: String,
-	        		required: true
-	        	},
+					type: String,
+					required: true
+				},
+				color: {
+					type: String,
+					required: true
+				},
 				cost: Number,
 				date_created: {
-	        		type: Date,
-	        		required: true
-	        	},
+					type: Date,
+					required: true
+				},
 				category_id: {
 					type: Number,
 					required: true
 				}
-	        };
-	    }
+			};
+		}
 
-	    function getCategoryProperties () {
-	    	return {
-	    		title: {
-	        		type: String,
-	        		required: true,
-	        		unique: true
-	        	},
-	        	singular_title: {
-	        		type: String,
-	        		required: true,
-	        		unique: true
-	        	},
+		function getCategoryProperties () {
+			return {
+				title: {
+					type: String,
+					required: true,
+					unique: true
+				},
+				singular_title: {
+					type: String,
+					required: true,
+					unique: true
+				},
 				date_created: {
-	        		type: Date,
-	        		required: true
-	        	}
-	    	};
-	    }
+					type: Date,
+					required: true
+				}
+			};
+		}
 
-	    function getWearLogProperties () {
-	    	return {
-	    		date_created: {
-	        		type: Date,
-	        		required: true
-	        	},
-	        	clothing_item_id: {
+		function getWearLogProperties () {
+			return {
+				date_created: {
+					type: Date,
+					required: true
+				},
+				clothing_item_id: {
 					type: Number,
 					required: true
 				}
-	    	};
-	    }
+			};
+		}
 
-	    function getQuery (model, conditions) {
+		function getQuery (model, conditions) {
 			var query;
 			if (!Object.keys(conditions).length) {
 				query = model.find();

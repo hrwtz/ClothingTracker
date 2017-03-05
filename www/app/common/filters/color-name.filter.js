@@ -108,11 +108,11 @@
 				h /= 6;
 			}
 			return [parseInt(h * 255), parseInt(s * 255), parseInt(l * 255)];
-  		}
+		}
 
-  		function hexToRgb (color) {
-  			return [parseInt('0x' + color.substring(1, 3)), parseInt('0x' + color.substring(3, 5)),  parseInt('0x' + color.substring(5, 7))];
-  		}
+		function hexToRgb (color) {
+			return [parseInt('0x' + color.substring(1, 3)), parseInt('0x' + color.substring(3, 5)), parseInt('0x' + color.substring(5, 7))];
+		}
 	}
 
 })();
