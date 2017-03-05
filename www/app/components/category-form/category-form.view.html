@@ -1,10 +1,10 @@
-<ion-view>
-	<ion-header-bar>
-      	<h1 class="title">{{vm.pageTitle}}</h1>
-      	<div class="buttons">
-        	<button class="button button-icon" ui-sref="{{backState}}">Cancel</button>
-      </div>
-    </ion-header-bar>
+<ion-view title="{{vm.pageTitle}}">
+	<ion-nav-buttons side="left">
+      	<button menu-toggle="left" class="button button-icon ion-android-more-vertical"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+      	<button class="button button-icon" ui-sref="{{vm.backState}}">Cancel</button>
+    </ion-nav-buttons>
 	<ion-content class="padding">
 		<form ng-submit="vm.submit()" name="myForm">
 			<div class="list">

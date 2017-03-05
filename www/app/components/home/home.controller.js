@@ -10,6 +10,7 @@
 	function HomeController ($q, $scope, ngDataFactory) {
 		var vm;
 		vm = this;
+
 		vm.addWearLog = addWearLog;
 		vm.isLastWearRecent = isLastWearRecent;
 
