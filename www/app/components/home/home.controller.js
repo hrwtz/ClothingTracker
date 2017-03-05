@@ -29,7 +29,11 @@
 		}
 
 		function addWearLog (clothingItem) {
-			ngDataFactory.create('Wear Log', {clothing_item_id: clothingItem.id}).then(function (data) {
+			var logItem = {
+				clothing_item_id: clothingItem.id,
+				date_worn: new Date().getTime()
+			};
+			ngDataFactory.create('Wear Log', logItem).then(function (data) {
 				clothingItem.wear_log.push(data);
 			});
 		}
@@ -39,15 +43,14 @@
 			if (!wearLog.length) {
 				return false;
 			}
-			return isDateToday(wearLog[wearLog.length - 1].date_created);
+			return isSameDay(new Date(+wearLog[wearLog.length - 1].date_worn));
 		}
 
-		function isDateToday (date) {
-			var now = new Date();
-			date = new Date(date);
-			var isSameDate = date.getDate() == now.getDate(),
-				isSameMonth = date.getMonth() == now.getMonth(),
-				isSameYear = date.getYear() == now.getYear();
+		function isSameDay (date1, date2) {
+			date2 = date2 || new Date();
+			var isSameDate = date1.getDate() == date2.getDate(),
+				isSameMonth = date1.getMonth() == date2.getMonth(),
+				isSameYear = date1.getYear() == date2.getYear();
 			return isSameDate && isSameMonth && isSameYear;
 		}
 	}

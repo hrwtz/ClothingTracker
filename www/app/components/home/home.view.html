@@ -23,7 +23,7 @@
 								</div>
 
 								<div class="button-bar padding-top">
-									<button class="button button-outline button-dark icon ion-information-circled"></button>
+									<button class="button button-outline button-dark icon ion-information-circled" ui-sref="clothing_item_view({clothing_item_id: clothingItem.id})"></button>
 									<button class="button button-outline button-dark icon ion-tshirt" ng-click="vm.addWearLog(clothingItem)" ng-disabled="vm.isLastWearRecent(clothingItem)"></button>
 								</div>
 							</div>	

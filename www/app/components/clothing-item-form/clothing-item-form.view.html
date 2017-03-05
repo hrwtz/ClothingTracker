@@ -24,7 +24,7 @@
 					<label class="item item-input item-stacked-label">
 						<div class="por">
 							<span class="input-label">Color</span>
-							<input type="text" ng-model="vm.clothingItem.color" placeholder="Color" required ct-format="colorName" disabled class="item-enabled">
+							<span class="item-stacked-content">{{vm.clothingItem.color | colorName}}</span>
 
 							<div class="iconCircle" ng-style="{'background-color': vm.clothingItem.color}"></div>
 						</div>

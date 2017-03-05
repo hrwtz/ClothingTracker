@@ -87,7 +87,7 @@
 		}
 
 		function create (modelName, object) {
-			object.date_created = object.date_created = new Date().toString();
+			object.date_created = object.date_created = new Date().getTime();
 			return $ngData.model(modelName).create(object);
 		}
 
@@ -153,6 +153,10 @@
 				clothing_item_id: {
 					type: Number,
 					required: true
+				},
+				date_worn: {
+					type: Date,
+					required: true
 				}
 			};
 		}
@@ -172,7 +176,7 @@
 
 		function nestData (contain, values, result) {
 			if (!result) {
-				result = values['Category'];
+				result = values['Category'] || values['Wear Log'];
 			}
 
 			result.forEach(function (object) {

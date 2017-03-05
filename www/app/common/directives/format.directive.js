@@ -15,6 +15,7 @@
 
 		return directive;
 
+		// TODO - This isn't quite perfect
 		function link (scope, elem, attrs, ngModel) {
 			if (!ngModel) {
 				return;

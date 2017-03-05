@@ -29,7 +29,7 @@
 				controllerAs: 'vm'
 			})
 			.state('category_edit', {
-				url: '/categories/:category_id',
+				url: '/categories/:category_id/edit',
 				templateUrl: 'app/components/category-form/category-form.view.html',
 				controller: 'CategoryFormController',
 				controllerAs: 'vm'
@@ -41,9 +41,21 @@
 				controllerAs: 'vm'
 			})
 			.state('clothing_item_edit', {
-				url: '/clothing_item/:clothing_item_id',
+				url: '/clothing_item/:clothing_item_id/edit',
 				templateUrl: 'app/components/clothing-item-form/clothing-item-form.view.html',
 				controller: 'ClothingItemFormController',
+				controllerAs: 'vm'
+			})
+			.state('clothing_item_view', {
+				url: '/clothing_item/:clothing_item_id',
+				templateUrl: 'app/components/clothing-item-view/clothing-item-view.view.html',
+				controller: 'ClothingItemViewController',
+				controllerAs: 'vm'
+			})
+			.state('wear_log', {
+				url: '/clothing_item/:clothing_item_id/wear_log',
+				templateUrl: 'app/components/wear-log/wear-log.view.html',
+				controller: 'WearLogController',
 				controllerAs: 'vm'
 			});
 		$urlRouterProvider

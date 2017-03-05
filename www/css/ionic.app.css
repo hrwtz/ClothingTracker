@@ -9891,9 +9891,14 @@ a.button {
     content: "";
     pointer-events: none; }
 
-input.item-enabled,
-input[disabled].item-enabled {
-  background-color: #fff; }
+.item-stacked-content {
+  display: block;
+  padding: 2px 8px 3px 0;
+  height: 34px;
+  color: #111;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 29px; }
 
 .md-color-picker-container {
   width: auto;
@@ -9914,6 +9919,16 @@ md-input-container {
   width: 90%;
   max-width: 346px;
   max-height: 90%; }
+
+md-datepicker {
+  position: absolute;
+  width: 0px;
+  height: 0;
+  opacity: 0;
+  pointer-events: none; }
+
+.md-calendar-day-header th {
+  vertical-align: middle; }
 
 .clothingCard {
   flex-grow: 0;

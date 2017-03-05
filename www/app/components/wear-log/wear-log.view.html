@@ -1,0 +1,35 @@
+<ion-view title="Wear Log">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon ion-android-more-vertical"></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon" ui-sref="home">Back</button>
+	</ion-nav-buttons>
+	<ion-content class="padding">
+		<ul class="list card" ng-show="vm.wearLog.length">
+			<li class="item item-text-wrap item-icon" ng-repeat="logItem in vm.wearLog">
+				<div class="item-icon-wrap">
+					<span class="item-icon-content">
+						{{logItem.date_worn | date : 'mediumDate'}}
+					</span>
+					<span class="item-icon-icons">
+						<a ng-click="vm.openConfirmDeletePopup(logItem)" class="dark dib">
+							<i class="icon ion-close-circled"></i>
+						</a>
+					</span>
+				</div>
+			</li>
+		</ul>
+
+		<div ng-show="!vm.wearLog.length" class="padding">
+			<h3>There are no items to display.</h3>
+		</div>
+
+		<div class="por fr">
+			<md-datepicker ng-model="vm.newDate" ng-change="vm.addLogItem()" md-is-open="vm.isDatePickerOpen" md-max-date="vm.datePickerMaxDate" md-date-filter="vm.dateFilter"></md-datepicker>
+			<div class="button-bar padding-bottom button-bar--small">
+				<button class="button button-outline button-balanced icon ion-plus-circled" ng-click="vm.isDatePickerOpen = true"></button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
