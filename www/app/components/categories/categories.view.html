@@ -3,10 +3,10 @@
 		<button menu-toggle="left" class="button button-icon ion-android-more-vertical"></button>
 	</ion-nav-buttons>
 	<ion-nav-buttons side="right">
-		<button class="button button-icon" ui-sref="home">Cancel</button>
+		<button class="button button-icon" ui-sref="home">Back</button>
 	</ion-nav-buttons>
 	<ion-content class="padding">
-		<ul class="list card">
+		<ul class="list card" ng-show="vm.categories.length">
 			<li class="item item-text-wrap item-icon" ng-repeat="category in vm.categories">
 				<div class="item-icon-wrap">
 					<span class="item-icon-content">
@@ -23,6 +23,10 @@
 				</div>
 			</li>
 		</ul>
+
+		<div ng-show="!vm.categories.length" class="padding">
+			<h3>There are no categories to display.</h3>
+		</div>
 
 		<div class="button-bar padding-bottom button-bar--small fr">
 			<button class="button button-outline button-balanced icon ion-plus-circled" ui-sref="category_add"></button>
