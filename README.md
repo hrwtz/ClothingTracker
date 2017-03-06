@@ -3,7 +3,6 @@
 ### Pressing ###
 * Finish save backup functionality
 * Add restore backup functionality
-* Fix format directive
 * Update ngDataFactory so code isn't so hacky
 * Fix back buttons to work regardless of state
 * Get isSameDay helper function out of controller
