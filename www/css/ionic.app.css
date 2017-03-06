@@ -9899,6 +9899,8 @@ a.button {
   vertical-align: middle;
   font-size: 14px;
   line-height: 29px; }
+  .item-stacked-content .item-placeholder {
+    color: #888; }
 
 .md-color-picker-container {
   width: auto;
