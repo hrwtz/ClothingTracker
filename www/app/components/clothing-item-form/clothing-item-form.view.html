@@ -24,7 +24,10 @@
 					<label class="item item-input item-stacked-label">
 						<div class="por">
 							<span class="input-label">Color</span>
-							<span class="item-stacked-content">{{vm.clothingItem.color | colorName}}</span>
+							<span class="item-stacked-content">
+								{{vm.clothingItem.color | colorName}}
+								<span class="item-placeholder" ng-show="!vm.clothingItem.color">Color</span>
+							</span>
 
 							<div class="iconCircle" ng-style="{'background-color': vm.clothingItem.color}"></div>
 						</div>
