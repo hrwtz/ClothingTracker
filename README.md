@@ -6,8 +6,8 @@
 * Fix format directive
 * Update ngDataFactory so code isn't so hacky
 * Fix back buttons to work regardless of state
-* Order wear log by Date
-* Order clothing items by color
+* Get isSameDay helper function out of controller
+* Get color sort out of controller
 
 
 ### Eventually ###

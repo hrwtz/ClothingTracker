@@ -39,6 +39,9 @@
 		function getWearLog () {
 			ngDataFactory.find('Wear Log', {clothing_item_id: $stateParams.clothing_item_id}).then(function (wearLog) {
 				vm.wearLog = wearLog;
+				vm.wearLog.sort(function (a, b) {
+					return a.date_worn - b.date_worn;
+				});
 			});
 		}
 
@@ -64,6 +67,7 @@
 			return !isAlreadyLogged;
 		}
 
+		// TODO - Shouldn't be in controller
 		function isSameDay (date1, date2) {
 			date2 = date2 || new Date();
 			var isSameDate = date1.getDate() == date2.getDate(),
