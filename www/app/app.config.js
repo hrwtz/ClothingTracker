@@ -57,6 +57,12 @@
 				templateUrl: 'app/components/wear-log/wear-log.view.html',
 				controller: 'WearLogController',
 				controllerAs: 'vm'
+			})
+			.state('backup', {
+				url: '/backup',
+				templateUrl: 'app/components/backup/backup.view.html',
+				controller: 'BackupController',
+				controllerAs: 'vm'
 			});
 		$urlRouterProvider
 			.otherwise('/');

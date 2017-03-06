@@ -105,7 +105,7 @@
 					type: String,
 					required: true
 				},
-				note: {
+				description: {
 					type: String,
 					required: true
 				},
@@ -176,7 +176,7 @@
 
 		function nestData (contain, values, result) {
 			if (!result) {
-				result = values['Category'] || values['Wear Log'];
+				result = values['Category'] || values['Wear Log'] || values['Clothing Item'];
 			}
 
 			result.forEach(function (object) {
@@ -212,7 +212,7 @@
 					for (var i = 0; i < 4; i++) {
 						ClothingItem.create({
 							brand: 'Ted Baker',
-							note: 'Flower Pattern',
+							description: 'Flower Pattern',
 							cost: 20.30,
 							color: '#606dbc',
 							date_created: new Date().toString(),

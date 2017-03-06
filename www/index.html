@@ -24,7 +24,8 @@
 		<script src="lib/angular-material/angular-material.min.js"></script>
 		<script src="lib/angular-aria/angular-aria.min.js"></script>
 
-		<!-- cordova script (this will be a 404 during development) -->
+		<!-- cordova script -->
+		<script src="lib/ngCordova/dist/ng-cordova.js"></script>
 		<script src="cordova.js"></script>
 
 		<!-- your app's js -->
@@ -43,8 +44,9 @@
 		<script src="app/components/clothing-item-form/clothing-item-form.controller.js"></script>
 		<script src="app/components/clothing-item-view/clothing-item-view.controller.js"></script>
 		<script src="app/components/wear-log/wear-log.controller.js"></script>
+		<script src="app/components/backup/backup.controller.js"></script>
 	</head>
-	<body ng-app="clothingTracker">
+	<body ng-app="clothingTracker" class="platform-android">
 		<ion-side-menus>
 
 			<ion-side-menu side="left">
@@ -53,7 +55,12 @@
 				</header>
 				<ion-content class="has-header">
 					<ul class="list">
-						<a ui-sref="home" menu-toggle="left" nav-clear class="item">Home</a>
+						<li>
+							<a ui-sref="home" menu-toggle="left" class="item">Home</a>
+						</li>
+						<li>
+							<a ui-sref="backup" menu-toggle="left" class="item">Backup</a>
+						</li>
 					</ul>
 				</ion-content>
 			</ion-side-menu>
