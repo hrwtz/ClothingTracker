@@ -1,12 +1,12 @@
 // *************************************
 //
-//   Ionic Expansion
-//   -> Overrides and additions to ionic styles
+//	Ionic Expansion
+//	-> Overrides and additions to ionic styles
 //
 // *************************************
 
 // -------------------------------------
-//   Button Bar
+//	Button Bar
 // -------------------------------------
 
 .button-bar--small {
@@ -20,7 +20,7 @@
 }
 
 // -------------------------------------
-//   Item
+//	Item
 // -------------------------------------
 
 .item-icon .icon {
@@ -40,19 +40,19 @@
 .item-icon-icons {
 	flex-shrink: 0;
 	height: 20px;
-	padding-left: 15px; 
+	padding-left: 15px;
 	margin-top: -5px;
 	margin-right: -5px;
-	margin-left: -5px;  
+	margin-left: -5px;
 
 	.icon {
-		margin-left: 5px;  
+		margin-left: 5px;
 		margin-right: 5px;
 	}
 }
 
 // -------------------------------------
-//   Spinner
+//	Spinner
 // -------------------------------------
 .spinner-full {
 	position: absolute;
@@ -71,7 +71,7 @@
 }
 
 // -------------------------------------
-//   Forms
+//	Forms
 // -------------------------------------
 .item-input {
 	padding-right: 16px;
@@ -101,88 +101,147 @@
 	position: relative;
 
 	&:after {
-	    position: absolute;
-	    top: 50%;
-	    right: 16px;
-	    margin-top: -3px;
-	    width: 0;
-	    height: 0;
-	    border-top: 5px solid;
-	    border-right: 5px solid transparent;
-	    border-left: 5px solid transparent;
-	    color: #999;
-	    content: "";
-	    pointer-events: none;
+		position: absolute;
+		top: 50%;
+		right: 16px;
+		margin-top: -3px;
+		width: 0;
+		height: 0;
+		border-top: 5px solid;
+		border-right: 5px solid transparent;
+		border-left: 5px solid transparent;
+		color: #999;
+		content: "";
+		pointer-events: none;
 	}
 }
 
 .item-stacked-content {
-    display: block;
-    padding: 2px 8px 3px 0;
-    height: 34px;
-    color: #111;
-    vertical-align: middle;
-    font-size: 14px;
-    line-height: 29px;
+	display: block;
+	padding: 2px 8px 3px 0;
+	height: 34px;
+	color: #111;
+	vertical-align: middle;
+	font-size: 14px;
+	line-height: 29px;
 
-    .item-placeholder {
+	.item-placeholder {
 		color: #888;
 	}
 }
 
 // -------------------------------------
-//   Material Color Picker
+//	Material Design
 // -------------------------------------
-.md-color-picker-container {
-	width: auto;
-	height: 350px;
+md-dialog {
+	width: 100%;
+}
 
-	.md-color-picker-preview .md-color-picker-result {
-		.md-color-picker-tabs {
-			display: none;
+md-datepicker {
+	position: absolute;
+	width: 0px;
+	height: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.md-calendar-day-header th {
+	vertical-align: middle;
+}
+
+// -------------------------------------
+//	Color Picker
+// -------------------------------------
+
+.color-picker-dialog {
+	padding: 8px;
+	height: 350px;
+}
+
+.color-picker-dialog-preview {
+	flex: 1;
+	margin: -8px -8px 0px;
+}
+
+
+.color-picker-dialog-tabs {
+	margin: 8px -8px -8px;
+
+	.md-tab, 
+	md-tabs-wrapper, 
+	md-tabs-canvas, 
+	md-pagination-wrapper {
+		max-height: 36px;
+	}
+
+	.md-tab {
+		padding: 0 24px;
+		background: rgba(0,0,0,0.075);
+
+		&.md-active {
+			background: #fff;
 		}
 
-		& > div > input.switch {
-			display: none;
+		i {
+			font-size: 25px;
+			line-height: 36px;
 		}
 	}
-	
-	.md-color-picker-colors {
-		[md-color-picker-alpha] {
-			display: none;
-		}	
-		
-		&.md-color-picker-tabs .md-tab {
-			&:nth-of-type(2),
-			&:nth-of-type(4),
-			&:nth-of-type(5) {
-				display: none;
+
+	md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+		min-height: 298px;
+
+		md-tabs-content-wrapper {
+			height: 255px;
+
+			md-tab-content {
+				padding: 0px 8px;
 			}
 		}
 	}
 }
 
-md-input-container {
-	display: none;
+.color-picker-dialog-pallete-cell {
+	height: 25.5px;
 }
 
-.md-color-picker-dialog {
-	width: 90%;
-	max-width: 346px;
-	max-height: 90%;
+[ct-tovic-color-picker] {
+	height: 100%;
+}
+.color-picker {
+	position: relative;
+	height: 100%;
 }
 
-// -------------------------------------
-//   Material Date Picker
-// -------------------------------------
-md-datepicker {
-    position: absolute;
-    width: 0px;
-    height: 0;
-	opacity: 0;
-    pointer-events: none;
+.color-picker-control {
+	border: none;
+	box-shadow: none;
 }
 
-.md-calendar-day-header th {
-	vertical-align: middle;
+.color-picker-h {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	border: none;
+
+	i {
+		background: white;
+		height: 1px;
+		border: 2px solid #fff;
+		box-shadow: 0 0 2px 0 rgba(0,0,0,.5);
+
+		&:before {
+			content: none;
+		}
+	}
+}
+
+.color-picker-sv {
+	position: absolute;
+	left: 0;
+	right: 28px;
+	width: initial;
+	bottom: 0;
+	top: 0;
+	height: initial;
 }

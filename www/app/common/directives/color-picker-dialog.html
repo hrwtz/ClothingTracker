@@ -1,0 +1,36 @@
+<div class="color-picker-dialog" layout="column">
+	<div class="color-picker-dialog-preview" ng-style="{'background': vm.color}"></div>
+
+	<div class="color-picker-dialog-tabs">
+		<md-tabs md-stretch-tabs="always" md-align-tabs="bottom">
+			<md-tab>
+				<md-tab-label>
+					<i class="icon ion-ios-grid-view"></i>
+				</md-tab-label>
+				<md-tab-body>
+					<div layout="column" layout-align="space-between start center" flex>
+						<div class="layout-fill" layout="row" ng-repeat="row in vm.palette">
+							<div class="flex-10 color-picker-dialog-pallete-cell" 
+								 ng-repeat="color in row" 
+								 ng-style="{'background-color': color}" 
+								 ng-click="vm.color = color">
+							</div>
+						</div>
+					</div>
+				</md-tab-body>
+			</md-tab>
+			<md-tab>
+				<md-tab-label>
+					<i class="icon ion-ios-color-filter"></i>
+				</md-tab-label>
+				<md-tab-body>
+					<div ct-tovic-color-picker ng-model="vm.color"></div>
+				</md-tab-body>
+			</md-tab>
+		</md-tabs>
+	</div>
+</div>
+<md-actions layout="row">
+	<md-button ng-click="vm.close()" flex="50;">Cancel</md-button>
+	<md-button ng-click="vm.ok()" flex="50;">Select</md-button>
+</md-actions>
