@@ -20,19 +20,21 @@
 
 		function link (scope, element, attributes, ngModel) {
 			scope.clickHandler = clickHandler;
-		}
 
-		function clickHandler ($event) {
-			var dialog = $mdDialog.show({
-				templateUrl: 'app/common/directives/color-picker-dialog.html',
-				controller: dialogController,
-				controllerAs: 'vm',
-				resolve: {
-					ngModel: ngModel
-				}
-            });
+			function clickHandler ($event) {
+				var dialog = $mdDialog.show({
+					templateUrl: 'app/common/directives/color-picker-dialog.html',
+					controller: dialogController,
+					controllerAs: 'vm',
+					resolve: {
+						ngModel: function () {
+							return ngModel;
+						}
+					}
+	            });
 
-            dialog.then(ngModel.$setViewValue);
+	            dialog.then(ngModel.$setViewValue);
+			}
 		}
 
 		function dialogController (ngModel) {

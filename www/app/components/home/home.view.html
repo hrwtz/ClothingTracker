@@ -11,8 +11,8 @@
 				<div class="clothingCard-categoryWrap">
 					<ul class="clearfix clothingCard-wrap" ng-show="category.clothing_items.length">
 						<li class="card list clothingCard" ng-repeat="clothingItem in category.clothing_items">
-							<div class="item item-text-wrap">
-								<div class="item-icon-circle-right padding-bottom por">
+							<div class="item item-text-wrap clothingCard-item" layout="column">
+								<div class="item-icon-circle-right padding-bottom por" flex="grow">
 									<div class="icon iconCircle" ng-style="{'background-color': clothingItem.color}"></div>
 									<h2 class="clothingCard-title">
 										<strong class="clothingCard-subTitle">{{clothingItem.brand}}</strong> 
@@ -22,9 +22,11 @@
 									<p>{{clothingItem.cost / clothingItem.wear_log.length | currency}} a wear</p>
 								</div>
 
-								<div class="button-bar padding-top">
-									<button class="button button-outline button-dark icon ion-information-circled" ui-sref="clothing_item_view({clothing_item_id: clothingItem.id})"></button>
-									<button class="button button-outline button-dark icon ion-tshirt" ng-click="vm.addWearLog(clothingItem)" ng-disabled="vm.isLastWearRecent(clothingItem)"></button>
+								<div>
+									<div class="button-bar padding-top">
+										<button class="button button-outline button-dark icon ion-information-circled" ui-sref="clothing_item_view({clothing_item_id: clothingItem.id})"></button>
+										<button class="button button-outline button-dark icon ion-tshirt" ng-click="vm.addWearLog(clothingItem)" ng-disabled="vm.isLastWearRecent(clothingItem)"></button>
+									</div>
 								</div>
 							</div>	
 						</li>
