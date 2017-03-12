@@ -5,9 +5,9 @@
 		.module('clothingTracker')
 		.controller('WearLogController', WearLogController);
 	
-	WearLogController.$inject = ['$ionicPopup', '$scope', '$stateParams', 'ngDataFactory'];
+	WearLogController.$inject = ['$ionicPopup', '$scope', '$stateParams', 'ngDataFactory', 'datesFactory'];
 
-	function WearLogController ($ionicPopup, $scope, $stateParams, ngDataFactory) {
+	function WearLogController ($ionicPopup, $scope, $stateParams, ngDataFactory, datesFactory) {
 		var vm;
 		vm = this;
 
@@ -60,20 +60,11 @@
 		function dateFilter (date) {
 			var isAlreadyLogged = false;
 			vm.wearLog.forEach(function (logItem) {
-				if (isSameDay(date, new Date(+logItem.date_worn))) {
+				if (datesFactory.isSameDay(date, new Date(+logItem.date_worn))) {
 					isAlreadyLogged = true;
 				}
 			});
 			return !isAlreadyLogged;
-		}
-
-		// TODO - Shouldn't be in controller
-		function isSameDay (date1, date2) {
-			date2 = date2 || new Date();
-			var isSameDate = date1.getDate() == date2.getDate(),
-				isSameMonth = date1.getMonth() == date2.getMonth(),
-				isSameYear = date1.getYear() == date2.getYear();
-			return isSameDate && isSameMonth && isSameYear;
 		}
 	}
 	

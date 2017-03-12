@@ -5,9 +5,9 @@
 		.module('clothingTracker')
 		.controller('HomeController', HomeController);
 	
-	HomeController.$inject = ['$q', '$scope', 'ngDataFactory'];
+	HomeController.$inject = ['$q', '$scope', 'ngDataFactory', 'datesFactory'];
 
-	function HomeController ($q, $scope, ngDataFactory) {
+	function HomeController ($q, $scope, ngDataFactory, datesFactory) {
 		var vm;
 		vm = this;
 
@@ -77,16 +77,7 @@
 			if (!wearLog.length) {
 				return false;
 			}
-			return isSameDay(new Date(+wearLog[wearLog.length - 1].date_worn));
-		}
-
-		// TODO - Shouldn't be in controller
-		function isSameDay (date1, date2) {
-			date2 = date2 || new Date();
-			var isSameDate = date1.getDate() == date2.getDate(),
-				isSameMonth = date1.getMonth() == date2.getMonth(),
-				isSameYear = date1.getYear() == date2.getYear();
-			return isSameDate && isSameMonth && isSameYear;
+			return datesFactory.isSameDay(new Date(+wearLog[wearLog.length - 1].date_worn));
 		}
 	}
 	
