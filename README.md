@@ -5,7 +5,6 @@
 * Add restore backup functionality
 * Update ngDataFactory so code isn't so hacky
 * Fix back buttons to work regardless of state
-* Get color sort out of controller
 * Fix adding duplicate clothing item
 * Use material design framework more
 * Add ability to delete clothing item
