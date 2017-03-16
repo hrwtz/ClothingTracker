@@ -6,42 +6,40 @@
 		<button class="button button-icon" ui-sref="{{vm.backState}}">Back</button>
 	</ion-nav-buttons>
 	<ion-content class="padding">
-		<form ng-submit="vm.submit()" name="myForm">
-			<div class="list">
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Brand</span>
-					<span class="item-stacked-content">{{vm.clothingItem.brand}}</span>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Short Description</span>
-					<span class="item-stacked-content">{{vm.clothingItem.description}}</span>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Cost</span>
-					<span class="item-stacked-content">{{vm.clothingItem.cost | currency}}</span>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<div class="por">
-						<span class="input-label">Color</span>
-						<span class="item-stacked-content">{{vm.clothingItem.color | colorName}}</span>
+		<div class="list">
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Brand</span>
+				<span class="item-stacked-content">{{vm.clothingItem.brand}}</span>
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Short Description</span>
+				<span class="item-stacked-content">{{vm.clothingItem.description}}</span>
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Cost</span>
+				<span class="item-stacked-content">{{vm.clothingItem.cost | currency}}</span>
+			</label>
+			<label class="item item-input item-stacked-label">
+				<div class="por">
+					<span class="input-label">Color</span>
+					<span class="item-stacked-content">{{vm.clothingItem.color | colorName}}</span>
 
-						<div class="iconCircle" ng-style="{'background-color': vm.clothingItem.color}"></div>
-					</div>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Category</span>
-					<span class="item-stacked-content">{{vm.clothingItem.category.title}}</span>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Times Worn</span>
-					<span class="item-stacked-content">{{vm.clothingItem.wearLog.length}}</span>
-				</label>
-			</div>
+					<div class="iconCircle" ng-style="{'background-color': vm.clothingItem.color}"></div>
+				</div>
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Category</span>
+				<span class="item-stacked-content">{{vm.clothingItem.category.title}}</span>
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Times Worn</span>
+				<span class="item-stacked-content">{{vm.clothingItem.wearLog.length}}</span>
+			</label>
+		</div>
 
-			<div class="button-bar padding-bottom button-bar--small fr">
-				<button class="button button-outline button-dark icon ion-android-list" ui-sref="wear_log({clothing_item_id: vm.clothingItem.id})"></button><!--
-			 --><button class="button button-outline button-dark icon ion-edit" ui-sref="clothing_item_edit({clothing_item_id: vm.clothingItem.id})"></button>
-			</div>
-		</form>
+		<div class="button-bar padding-bottom button-bar--small fr">
+			<button class="button button-outline button-dark icon ion-android-list" ui-sref="wear_log({clothing_item_id: vm.clothingItem.id})"></button><!--
+		 --><button class="button button-outline button-dark icon ion-edit" ui-sref="clothing_item_edit({clothing_item_id: vm.clothingItem.id})"></button>
+		</div>
 	</ion-content>
 </ion-view>
