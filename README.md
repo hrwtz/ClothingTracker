@@ -7,8 +7,6 @@
 * Fix back buttons to work regardless of state
 * Use material design framework more
 * Add ability to delete clothing item
-* On all inputs, set correct type and tabindex
-* Fix type drag android thingy on inputs
 
 
 ### Eventually ###
